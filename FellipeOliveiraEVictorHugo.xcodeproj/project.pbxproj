@@ -27,7 +27,7 @@
 		749CB424208B9C470022A26C /* ShoppingRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRegisterViewController.swift; sourceTree = "<group>"; };
 		749CB428208CBF340022A26C /* ShoppingTotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTotalViewController.swift; sourceTree = "<group>"; };
 		749CB42A208CE0960022A26C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		74F7A54C2089633D00CB4244 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F7A54C2089633D00CB4244 /* FellipeOliveiraEVictorHugo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FellipeOliveiraEVictorHugo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F7A54F2089633D00CB4244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F7A5542089633D00CB4244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74F7A5572089633D00CB4244 /* ComprasUSA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComprasUSA.xcdatamodel; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		74F7A54D2089633D00CB4244 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74F7A54C2089633D00CB4244 /* ComprasUSA.app */,
+				74F7A54C2089633D00CB4244 /* FellipeOliveiraEVictorHugo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74F7A54B2089633D00CB4244 /* ComprasUSA */ = {
+		74F7A54B2089633D00CB4244 /* FellipeOliveiraEVictorHugo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74F7A5612089633F00CB4244 /* Build configuration list for PBXNativeTarget "ComprasUSA" */;
+			buildConfigurationList = 74F7A5612089633F00CB4244 /* Build configuration list for PBXNativeTarget "FellipeOliveiraEVictorHugo" */;
 			buildPhases = (
 				74F7A5482089633D00CB4244 /* Sources */,
 				74F7A5492089633D00CB4244 /* Frameworks */,
@@ -100,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = ComprasUSA;
+			name = FellipeOliveiraEVictorHugo;
 			productName = ComprasUSA;
-			productReference = 74F7A54C2089633D00CB4244 /* ComprasUSA.app */;
+			productReference = 74F7A54C2089633D00CB4244 /* FellipeOliveiraEVictorHugo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +121,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 74F7A5472089633D00CB4244 /* Build configuration list for PBXProject "ComprasUSA" */;
+			buildConfigurationList = 74F7A5472089633D00CB4244 /* Build configuration list for PBXProject "FellipeOliveiraEVictorHugo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -134,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74F7A54B2089633D00CB4244 /* ComprasUSA */,
+				74F7A54B2089633D00CB4244 /* FellipeOliveiraEVictorHugo */,
 			);
 		};
 /* End PBXProject section */
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		74F7A5472089633D00CB4244 /* Build configuration list for PBXProject "ComprasUSA" */ = {
+		74F7A5472089633D00CB4244 /* Build configuration list for PBXProject "FellipeOliveiraEVictorHugo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74F7A55F2089633F00CB4244 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74F7A5612089633F00CB4244 /* Build configuration list for PBXNativeTarget "ComprasUSA" */ = {
+		74F7A5612089633F00CB4244 /* Build configuration list for PBXNativeTarget "FellipeOliveiraEVictorHugo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74F7A5622089633F00CB4244 /* Debug */,
