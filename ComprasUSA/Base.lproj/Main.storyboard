@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l9b-We-l1M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l9b-We-l1M">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -188,7 +188,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addUpdateMovie:" destination="XaB-xq-kBb" eventType="touchUpInside" id="RfT-IY-3JB"/>
+                                    <action selector="addUpdateProduct:" destination="XaB-xq-kBb" eventType="touchUpInside" id="EUp-ls-deP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -309,6 +309,10 @@
                         <viewLayoutGuide key="safeArea" id="cxw-Zb-2Vc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da Compra" image="bagIcon" id="6Cc-FA-IFf"/>
+                    <connections>
+                        <outlet property="lbDolarValue" destination="lx6-hd-Om9" id="0FU-Nw-u6i"/>
+                        <outlet property="lbRealValue" destination="RGh-UL-F67" id="ch8-uP-9Gk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvL-Og-994" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

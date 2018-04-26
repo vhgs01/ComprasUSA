@@ -62,7 +62,10 @@ class ShoppingTableViewController: UITableViewController {
         let shopping = fetchedResultController.object(at: indexPath)
         cell.lbName.text = shopping.name
         cell.lbPrice.text = "\(shopping.price)"
-        cell.ivPhoto.image = shopping.photo
+        if let image = shopping.photo as? UIImage {
+           cell.ivPhoto.image = image
+        }
+        
         return cell
     }
     

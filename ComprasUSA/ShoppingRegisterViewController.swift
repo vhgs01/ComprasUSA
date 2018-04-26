@@ -28,13 +28,14 @@ class ShoppingRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadStates()
         if product != nil {
             lbName.text = product.name
             lbPrice.text = "\(product.price)"
             swPaymentForm.isOn = product.paymentForm
             btAddUpdate.setTitle("Atualizar", for: .normal)
-            ivPhoto.image = product.photo
+            if let image = product.photo as? UIImage {
+                ivPhoto.image = image
+            }
         }
         
         pickerView = UIPickerView() //Instanciando o UIPickerView
@@ -50,6 +51,10 @@ class ShoppingRegisterViewController: UIViewController {
         
         lbShoppingState.inputAccessoryView = toolbar
         lbShoppingState.inputView = pickerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadStates()
     }
     
     // MARK:  Methods
@@ -85,10 +90,8 @@ class ShoppingRegisterViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func addPoster(_ sender: UIButton) {
-        //Criando o alerta que será apresentado ao usuário
         let alert = UIAlertController(title: "Selecionar Imagem", message: "De onde você quer escolher a imagem?", preferredStyle: .actionSheet)
 
-        //Verificamos se o device possui câmera. Se sim, adicionamos a devida UIAlertAction
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraAction = UIAlertAction(title: "Câmera", style: .default, handler: { (action: UIAlertAction) in
                 self.selectPicture(sourceType: .camera)
@@ -96,7 +99,6 @@ class ShoppingRegisterViewController: UIViewController {
             alert.addAction(cameraAction)
         }
 
-        //As UIAlertActions de Biblioteca de fotos e Álbum de fotos também são criadas e adicionadas
         let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { (action: UIAlertAction) in
             self.selectPicture(sourceType: .photoLibrary)
         }
@@ -113,20 +115,26 @@ class ShoppingRegisterViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func close(_ sender: UIButton?) {
-        if product != nil && product.name == nil {
-            context.delete(product)
-        }
-        dismiss(animated: true, completion: nil)
+    func close () { navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addUpdateMovie(_ sender: UIButton) {
+    @IBAction func addUpdateProduct(_ sender: UIButton) {
         if product == nil {
             product = Product(context: context)
         }
         product.name = lbName.text!
         product.price = Double(lbPrice.text!)!
         product.paymentForm = swPaymentForm.isOn
+        
+        var state: State!
+        
+        dataSource?.forEach({ (s) in
+            if s.name!.elementsEqual(lbShoppingState.text!) {
+                state = s
+            }
+        })
+        
+        product.state = state
         if smallImage != nil {
             product.photo = smallImage
         }
@@ -136,7 +144,7 @@ class ShoppingRegisterViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-        close(nil)
+        close()
     }
 
 }
@@ -153,34 +161,28 @@ extension ShoppingRegisterViewController: UIImagePickerControllerDelegate, UINav
         UIGraphicsBeginImageContext(smallSize)
         image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
         
-        //Atribuímos a versão reduzida da imagem à variável smallImage
         smallImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        ivPhoto.image = smallImage //Atribuindo a imagem à ivPoster
-        
-        //Aqui efetuamos o dismiss na UIImagePickerController, para retornar à tela anterior
+        ivPhoto.image = smallImage
         dismiss(animated: true, completion: nil)
     }
 }
 
 extension ShoppingRegisterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //Retornando o texto recuperado do objeto dataSource, baseado na linha selecionada
         return fetchedResultController.object(at: IndexPath(row: row, section: 0)).name
     }
 }
 
 extension ShoppingRegisterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1    //Usaremos apenas 1 coluna (component) em nosso pickerView
+        return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataSource!.count
     }
 }
 
-// MARK: - NSFetchedResultsControllerDelegate
 extension ShoppingRegisterViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         

@@ -70,10 +70,6 @@ class SettingsViewController: UIViewController {
             if let fee = Double(alert.textFields!.last!.text!) {
                 state.fee = fee
             }
-//            state.iof = Double(self.tfIOF!.text!)!
-//            state.dolarValue = Double(self.tfDolarValue!.text!)!
-//            UserDefaults.standard.set(self.tfIOF.text!, forKey: "dolar")
-//            UserDefaults.standard.set(self.tfDolarValue.text!, forKey: "iof")
             
             do {
                 try self.context.save()
@@ -135,12 +131,7 @@ extension SettingsViewController: UITableViewDataSource {
         cell.textLabel?.text = state.name!
         cell.detailTextLabel?.text = "\(state.fee)"
         cell.detailTextLabel?.textColor = .red
-        
-        if product != nil {
-            if let states = product.states, states.contains(state) {
-                cell.accessoryType = .checkmark
-            }
-        }
+
         return cell
     }
 }
