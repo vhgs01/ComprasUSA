@@ -38,10 +38,10 @@ class ShoppingRegisterViewController: UIViewController {
             }
         }
         
-        pickerView = UIPickerView() //Instanciando o UIPickerView
+        pickerView = UIPickerView()
         pickerView.backgroundColor = .white
-        pickerView.delegate = self  //Definindo seu delegate
-        pickerView.dataSource = self  //Definindo seu dataSource
+        pickerView.delegate = self
+        pickerView.dataSource = self
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
         let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
@@ -55,6 +55,9 @@ class ShoppingRegisterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadStates()
+        if let product = product {
+            lbShoppingState.text = product.state?.name
+        }
     }
     
     // MARK:  Methods
@@ -84,7 +87,11 @@ class ShoppingRegisterViewController: UIViewController {
     }
     
     @objc func done() {
-        lbShoppingState.text = dataSource![pickerView.selectedRow(inComponent: 0)].name!
+        if let data = dataSource, data.count > 0 {
+           if let name = data[pickerView.selectedRow(inComponent: 0)].name {
+               lbShoppingState.text = name
+           }
+        }
         cancel()
     }
     
@@ -179,7 +186,11 @@ extension ShoppingRegisterViewController: UIPickerViewDataSource {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataSource!.count
+        var count = 0
+        if let data = dataSource, data.count > 0 {
+            count = data.count
+        }
+        return count
     }
 }
 

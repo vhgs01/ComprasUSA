@@ -31,7 +31,7 @@
         <!--Lista de Compras-->
         <scene sceneID="uHi-43-tTS">
             <objects>
-                <tableViewController id="Mz8-OU-B7J" customClass="ShoppingTableViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mz8-OU-B7J" customClass="ShoppingTableViewController" customModule="FellipeOliveiraEVictorHugo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="pMx-j2-Wf3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingCell" id="z4n-a2-rc1" customClass="ShoppingTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingCell" id="z4n-a2-rc1" customClass="ShoppingTableViewCell" customModule="FellipeOliveiraEVictorHugo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-a2-rc1" id="39S-Cv-YiW">
@@ -74,6 +74,7 @@
                                     <outlet property="ivPhoto" destination="6eV-eg-mDZ" id="5ZF-qK-0qe"/>
                                     <outlet property="lbName" destination="fMe-So-REL" id="RZq-DX-OA7"/>
                                     <outlet property="lbPrice" destination="FBS-c2-PfL" id="lbK-ZP-fvT"/>
+                                    <segue destination="XaB-xq-kBb" kind="show" id="mAQ-s1-udH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,7 +100,7 @@
         <!--Cadastro de Compra-->
         <scene sceneID="aEe-Da-NlL">
             <objects>
-                <viewController id="XaB-xq-kBb" userLabel="Cadastro de Compra" customClass="ShoppingRegisterViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XaB-xq-kBb" userLabel="Cadastro de Compra" customClass="ShoppingRegisterViewController" customModule="FellipeOliveiraEVictorHugo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d4Z-6N-oST"/>
                         <viewControllerLayoutGuide type="bottom" id="Pet-df-Hqh"/>
@@ -140,7 +141,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartão?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6Z-Gv-0bV">
                                 <rect key="frame" x="183" y="311" width="61" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="61" id="82Z-zL-4qb"/>
                                     <constraint firstAttribute="height" constant="21" id="8HJ-Cu-g8g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -245,7 +245,7 @@
         <!--Total da Compra-->
         <scene sceneID="wrq-Yg-TLF">
             <objects>
-                <viewController id="N5I-QE-M0V" customClass="ShoppingTotalViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N5I-QE-M0V" customClass="ShoppingTotalViewController" customModule="FellipeOliveiraEVictorHugo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kNx-q7-ndv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,17 +340,17 @@
         <!--Ajustes-->
         <scene sceneID="xz1-gU-cEn">
             <objects>
-                <viewController title="Ajustes" id="er5-Zh-MGE" customClass="SettingsViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ajustes" id="er5-Zh-MGE" customClass="SettingsViewController" customModule="FellipeOliveiraEVictorHugo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oHt-Ds-vvb"/>
                         <viewControllerLayoutGuide type="bottom" id="nVZ-9y-Kjc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c34-Qk-KOw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IOF (%):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sw-ig-5b0">
-                                <rect key="frame" x="16" y="66" width="209" height="21"/>
+                                <rect key="frame" x="16" y="86" width="209" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BsO-Ly-5o2"/>
                                 </constraints>
@@ -359,7 +359,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impostos por Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxe-MQ-EDU">
-                                <rect key="frame" x="85.5" y="117" width="149.5" height="21"/>
+                                <rect key="frame" x="85.5" y="137" width="149.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="YmF-je-Jhg"/>
                                 </constraints>
@@ -368,7 +368,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotação do Dólar (R$):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxy-XB-cbZ">
-                                <rect key="frame" x="16" y="25" width="200" height="21"/>
+                                <rect key="frame" x="16" y="45" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6MA-jv-WTu"/>
                                 </constraints>
@@ -377,7 +377,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-ja-wDT">
-                                <rect key="frame" x="246" y="20" width="58" height="30"/>
+                                <rect key="frame" x="246" y="40" width="58" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1gy-nX-C14"/>
                                     <constraint firstAttribute="width" constant="58" id="4UO-N1-vQZ"/>
@@ -387,7 +387,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-Q1-eum">
-                                <rect key="frame" x="245" y="62" width="59" height="30"/>
+                                <rect key="frame" x="245" y="82" width="59" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="AhZ-bW-EDA"/>
                                     <constraint firstAttribute="height" constant="30" id="ySI-XY-1Dv"/>
@@ -397,7 +397,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-cz-cFj">
-                                <rect key="frame" x="16" y="158" width="288" height="239"/>
+                                <rect key="frame" x="16" y="178" width="288" height="283"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="scJ-OF-t3I" detailTextLabel="IcE-lh-bf0" style="IBUITableViewCellStyleValue1" id="ZCW-5i-cbY">
@@ -427,11 +427,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8V-nK-urD">
-                                <rect key="frame" x="174" y="417" width="130" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="SWj-QA-ptm"/>
-                                    <constraint firstAttribute="width" constant="130" id="x9Y-6O-h9H"/>
-                                </constraints>
+                                <rect key="frame" x="188" y="481" width="116" height="30"/>
                                 <state key="normal" title="Adicionar Estado"/>
                                 <connections>
                                     <action selector="add:" destination="er5-Zh-MGE" eventType="touchUpInside" id="9U1-dG-q3H"/>
@@ -445,19 +441,20 @@
                             <constraint firstItem="eA7-HF-FOK" firstAttribute="trailing" secondItem="0ab-ja-wDT" secondAttribute="trailing" constant="16" id="7Rk-Kw-zDf"/>
                             <constraint firstItem="eA7-HF-FOK" firstAttribute="trailing" secondItem="oaO-cz-cFj" secondAttribute="trailing" constant="16" id="BAS-2C-sT9"/>
                             <constraint firstItem="eA7-HF-FOK" firstAttribute="trailing" secondItem="eDi-Q1-eum" secondAttribute="trailing" constant="16" id="Cfb-hF-kko"/>
+                            <constraint firstItem="m8V-nK-urD" firstAttribute="leading" secondItem="eA7-HF-FOK" secondAttribute="leading" constant="188" id="HOZ-x5-DhL"/>
+                            <constraint firstItem="eA7-HF-FOK" firstAttribute="bottom" secondItem="m8V-nK-urD" secondAttribute="bottom" constant="8" id="IPX-KT-HV3"/>
                             <constraint firstItem="oaO-cz-cFj" firstAttribute="leading" secondItem="eA7-HF-FOK" secondAttribute="leading" constant="16" id="J6O-Lz-tg3"/>
                             <constraint firstItem="0ab-ja-wDT" firstAttribute="leading" secondItem="Mxy-XB-cbZ" secondAttribute="trailing" constant="30" id="Oyx-Fm-BfI"/>
                             <constraint firstItem="Mxy-XB-cbZ" firstAttribute="leading" secondItem="eA7-HF-FOK" secondAttribute="leading" constant="16" id="Xdz-Co-ylT"/>
                             <constraint firstItem="eDi-Q1-eum" firstAttribute="top" secondItem="0ab-ja-wDT" secondAttribute="bottom" constant="12" id="Yiz-9h-kII"/>
                             <constraint firstItem="0ab-ja-wDT" firstAttribute="top" secondItem="oHt-Ds-vvb" secondAttribute="bottom" constant="20" id="cnU-m8-aYs"/>
-                            <constraint firstItem="m8V-nK-urD" firstAttribute="top" secondItem="oaO-cz-cFj" secondAttribute="bottom" constant="20" id="cu7-4N-wDT"/>
-                            <constraint firstItem="eA7-HF-FOK" firstAttribute="trailing" secondItem="m8V-nK-urD" secondAttribute="trailing" constant="16" id="dLi-km-eN3"/>
+                            <constraint firstItem="m8V-nK-urD" firstAttribute="top" secondItem="oaO-cz-cFj" secondAttribute="bottom" constant="20" id="eQS-Hz-A7G"/>
                             <constraint firstItem="oaO-cz-cFj" firstAttribute="top" secondItem="Fxe-MQ-EDU" secondAttribute="bottom" constant="20" id="eYL-0y-0GP"/>
                             <constraint firstItem="1sw-ig-5b0" firstAttribute="leading" secondItem="eA7-HF-FOK" secondAttribute="leading" constant="16" id="izW-Ve-0T2"/>
                             <constraint firstItem="Fxe-MQ-EDU" firstAttribute="top" secondItem="1sw-ig-5b0" secondAttribute="bottom" constant="30" id="lcu-zr-3Md"/>
                             <constraint firstItem="Mxy-XB-cbZ" firstAttribute="top" secondItem="oHt-Ds-vvb" secondAttribute="bottom" constant="25" id="s87-sg-PHI"/>
-                            <constraint firstItem="eA7-HF-FOK" firstAttribute="bottom" secondItem="m8V-nK-urD" secondAttribute="bottom" constant="8" id="szA-Ng-kW2"/>
                             <constraint firstItem="eDi-Q1-eum" firstAttribute="leading" secondItem="1sw-ig-5b0" secondAttribute="trailing" constant="20" id="vSP-dg-UzT"/>
+                            <constraint firstItem="eA7-HF-FOK" firstAttribute="trailing" secondItem="m8V-nK-urD" secondAttribute="trailing" constant="16" id="vTd-3X-4Pm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eA7-HF-FOK"/>
                     </view>
@@ -481,6 +478,7 @@
         <image name="purchaseIcon" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qmy-he-Rew"/>
+        <segue reference="HNe-Nx-avk"/>
+        <segue reference="mAQ-s1-udH"/>
     </inferredMetricsTieBreakers>
 </document>

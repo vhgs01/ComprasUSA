@@ -24,9 +24,13 @@ class ShoppingTableViewController: UITableViewController {
         
         loadProducts()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ShoppingRegisterViewController {//tratar
+            if let index = tableView.indexPathForSelectedRow {
+                vc.product = fetchedResultController.object(at: index)
+            }
+        }
     }
     
     func loadProducts() {
@@ -58,18 +62,18 @@ class ShoppingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as! ShoppingTableViewCell
-        let shopping = fetchedResultController.object(at: indexPath)
-        cell.lbName.text = shopping.name
-        cell.lbPrice.text = "\(shopping.price)"
-        if let image = shopping.photo as? UIImage {
-           cell.ivPhoto.image = image
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as? ShoppingTableViewCell {
+            let shopping = fetchedResultController.object(at: indexPath)
+            cell.lbName.text = shopping.name
+            cell.lbPrice.text = "\(shopping.price)"
+            if let image = shopping.photo as? UIImage {
+                cell.ivPhoto.image = image
+            }
+            return cell
         }
-        
-        return cell
+        return UITableViewCell()
     }
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let product = fetchedResultController.object(at: indexPath)
