@@ -67,7 +67,13 @@ class SettingsViewController: UIViewController {
             let state = state ?? State(context: self.context)
             state.name = alert.textFields?.first?.text
             
-            if let fee = Double(alert.textFields!.last!.text!) {
+            let fee = state.fee
+            var tax = alert.textFields!.last!.text!
+            if tax.contains(",") {
+                tax = tax.replacingOccurrences(of: ",", with: ".")
+                state.fee = Double(tax)!
+            }
+            else {
                 state.fee = fee
             }
             
